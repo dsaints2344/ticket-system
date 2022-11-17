@@ -36,6 +36,9 @@ app.get("/api/users/currentuser", (req, res) => {
 });
 
 const start = async () => {
+  if (!process.env.JWT_KEY) {
+    throw new Error("JWT_Key not defined");
+  }
   try {
     await mongoose.connect("mongodb://mongo-srv:27017/ticketing");
   } catch (error) {

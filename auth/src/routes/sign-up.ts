@@ -38,7 +38,7 @@ router.post(
         id: user.id,
         email: user.email,
       },
-      "fsdfsda"
+      process.env.JWT_KEY!
     );
 
     // * store jwt on session
